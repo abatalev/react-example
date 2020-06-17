@@ -1,8 +1,10 @@
 .project
 .classpath
 .settings/
+.idea/
 build/
 target/
 node/
 node_modules/
+*.iml
 yarn.lock

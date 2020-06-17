@@ -1,4 +1,4 @@
-package com.batal.demo.springandreact;
+package com.batal.demo.springandreact.rest;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
