@@ -1,23 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import "./App.css";
 
 function App() {
+  const [message, setMessage] = useState();
+
+  useEffect(() => {
+    async function fetchData() {
+      const loginResponse = await axios.post("/api/login", {
+        userName: "dima",
+        password: "secret",
+      });
+      const pingResponse = await axios.get("/api/ping", {
+        headers: {
+          Authorization: "Bearer " + loginResponse.data.token,
+        },
+      });
+      setMessage(pingResponse.data);
+    }
+    fetchData();
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p> Message: {message}</p>
       </header>
     </div>
   );
