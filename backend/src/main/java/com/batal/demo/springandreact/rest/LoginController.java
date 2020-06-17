@@ -20,12 +20,12 @@ public class LoginController {
         this.loginService = loginService;
     }
 
-    @GetMapping("/ping")
+    @GetMapping("/api/ping")
     public String ping(Authentication authentication) {
         return "pong " + (authentication != null ? authentication.getName() : "");
     }
 
-    @PostMapping(value = "/login")
+    @PostMapping(value = "/api/login")
     public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest login) {
         return ResponseEntity.ok(
                 new LoginResponse(

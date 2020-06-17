@@ -33,6 +33,10 @@ In `package.json` change `dependencies` sections:
   "proxy": "http://localhost:8080",
 ```
 
+## API 
+
+see `jwt.md`
+
 ### Launch frontend
 
 ```sh
