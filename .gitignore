@@ -2,9 +2,11 @@
 .classpath
 .settings/
 .idea/
+.vscode/
 build/
 target/
 node/
 node_modules/
 *.iml
 yarn.lock
+*.mv.db

@@ -1,0 +1,1 @@
+INSERT INTO USERS (USER_ID, USER_LABEL) VALUES ('IvanIvanov', 'Ivan Ivanov');
