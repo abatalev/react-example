@@ -1,0 +1,1 @@
+xjc -d backend\src\main\java\ -p com.batal.demo.springandreact.xsd backend\src\main\resources\xsd\simplexsd.xsd
