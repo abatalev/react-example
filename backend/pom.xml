@@ -130,6 +130,8 @@
                     <generateEpisode>false</generateEpisode>
                     <clearOutputDir>false</clearOutputDir>
                     <outputDirectory>src/main/java</outputDirectory>
+                    <addGeneratedAnnotation>true</addGeneratedAnnotation>
+                    <failOnNoSchemas>false</failOnNoSchemas>
                     <sources>
                         <source>src/main/resources/xsd</source>
                     </sources>
