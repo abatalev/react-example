@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
@@ -56,7 +57,7 @@
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
             <version>6.4.4</version>
-         </dependency>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -67,7 +68,7 @@
             <artifactId>flyway-spring-test</artifactId>
             <version>6.4.0</version>
             <scope>test</scope>
-         </dependency>
+        </dependency>
     </dependencies>
 
     <build>
@@ -105,12 +106,34 @@
                                     <type>zip</type>
                                     <classifier>frontend</classifier>
                                     <overWrite>true</overWrite>
-                                    <outputDirectory>${project.build.directory}/generated-resources/public</outputDirectory>
+                                    <outputDirectory>${project.build.directory}/generated-resources/public
+                                    </outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>xjc</id>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <packageName>com.batal.demo.springandreact.xsd</packageName>
+                    <generateEpisode>false</generateEpisode>
+                    <clearOutputDir>false</clearOutputDir>
+                    <outputDirectory>src/main/java</outputDirectory>
+                    <sources>
+                        <source>src/main/resources/xsd</source>
+                    </sources>
+                </configuration>
             </plugin>
         </plugins>
     </build>
