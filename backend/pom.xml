@@ -31,32 +31,26 @@
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
-            <version>0.9.1</version>
         </dependency>
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-runtime</artifactId>
-            <version>2.3.2</version>
         </dependency>
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <version>1.4.200</version>
         </dependency>
         <dependency>
             <groupId>com.oracle.database.jdbc</groupId>
             <artifactId>ojdbc8</artifactId>
-            <version>19.6.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.oracle.database.nls</groupId>
             <artifactId>orai18n</artifactId>
-            <version>19.6.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
-            <version>6.4.4</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -66,8 +60,11 @@
         <dependency>
             <groupId>org.flywaydb.flyway-test-extensions</groupId>
             <artifactId>flyway-spring-test</artifactId>
-            <version>6.4.0</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
         </dependency>
     </dependencies>
 
@@ -116,6 +113,7 @@
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
+                <!--jaxws-maven-plugin -->
                 <artifactId>jaxb2-maven-plugin</artifactId>
                 <executions>
                     <execution>
@@ -129,7 +127,6 @@
                     <packageName>com.batal.demo.springandreact.xsd</packageName>
                     <generateEpisode>false</generateEpisode>
                     <clearOutputDir>false</clearOutputDir>
-                    <outputDirectory>src/main/java</outputDirectory>
                     <addGeneratedAnnotation>true</addGeneratedAnnotation>
                     <failOnNoSchemas>false</failOnNoSchemas>
                     <sources>
